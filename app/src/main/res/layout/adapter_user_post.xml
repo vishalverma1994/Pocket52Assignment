@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="userPostData"
+            type="com.employeecare.data.model.UserPosts" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/tvPostTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14ssp"
+            android:text="@{userPostData.title}"
+            android:textColor="@color/colorTextBlack"
+            android:textStyle="bold"
+            android:justificationMode="inter_word"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tvPostDesc"
+            tools:ignore="UnusedAttribute" />
+
+        <TextView
+            android:id="@+id/tvPostDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14ssp"
+            android:text="@{userPostData.body}"
+            android:textColor="@color/colorTextBlack"
+            android:textStyle="normal"
+            android:justificationMode="inter_word"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPostTitle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="UnusedAttribute" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

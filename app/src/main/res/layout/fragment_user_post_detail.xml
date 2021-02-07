@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.UserPostDetailFragment">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="userDataModel"
+            type="com.employeecare.data.model.UserDataModel" />
+
+        <variable
+            name="isProgressBarVisible"
+            type="boolean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="@dimen/_16ssp"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/colorTextBlack"
+            android:text="@{@string/username(userDataModel.name)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tvUserEmail"/>
+
+        <TextView
+            android:id="@+id/tvUserEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="@dimen/_16ssp"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/colorTextBlack"
+            android:text="@{@string/email(userDataModel.email)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvUserName"
+            app:layout_constraintBottom_toTopOf="@+id/viewSeparator"/>
+
+        <View
+            android:id="@+id/viewSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvUserEmail"
+            app:layout_constraintBottom_toTopOf="@+id/rvUserPost"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvUserPost"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewSeparator"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{isProgressBarVisible ? View.VISIBLE : View.GONE}"
+            tools:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

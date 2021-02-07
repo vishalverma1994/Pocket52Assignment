@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">EmployeeCare</string>
+    <string name="exit_message">Press again to Exit!</string>
+    <string name="retry">Retry</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="search">Search</string>
+    <string name="user_id">User Id : %s</string>
+    <string name="post_count">Post Count : %s</string>
+    <string name="username"><b>UserName :</b> %s</string>
+    <string name="email"><b>Email :</b> %s</string>
+    <string name="user_post">User\'s Post</string>
+</resources>
